@@ -9,21 +9,35 @@ title: HW5 Data Visualization
 
 <h3>Plot 1: UFO Sightings per Year</h3>
 <p>
-This bar chart shows the number of UFO sighting reports per year. 
-Each bar represents a year, and the color gradient highlights temporal change using a plasma color scheme.
-The data was grouped by year after parsing datetime values from the dataset.
+This visualization shows the number of UFO sighting reports aggregated by year. After loading the dataset, I converted the date_time column into a proper datetime format and extracted the year values using Pandas. I then grouped the data by year and counted the number of sightings for each year. This preprocessing step helped produce a cleaner temporal summary suitable for a bar chart.
+
+In designing the plot, I used a bar encoding with year on the x-axis and count of reports on the y-axis. I applied a consistent blue color to keep the visualization simple and avoid overwhelming the viewer with unnecessary variation. The chart emphasizes long-term temporal trends and highlights periods with spikes in reported UFO sightings.
 </p>
-<iframe src="assets/ufo_plot1.html" width="700" height="450" style="border:none;"></iframe>
+<iframe 
+  src="https://sylviazhou12138.github.io/assets/ufo_plot1.html"
+  width="700"
+  height="450"
+  style="border:none;">
+</iframe>
 
 <h3>Plot 2: Interactive UFO Map</h3>
 <p>
-This interactive scatter map displays the geographic locations of UFO sightings. 
-Users can move a year slider to explore sightings in different time periods.
-The interactivity helps users notice temporal and spatial clustering of reports across the US.
+This visualization displays the geographic distribution of UFO sightings using latitude and longitude. I again parsed the date_time into timestamps and extracted the year so that sightings could be filtered by time. Each point represents one reported sighting, and the scatter layout reveals spatial clustering patterns across the United States.
+
+To enhance clarity and user engagement, I added an interactive slider parameter that filters the points by year. This interactivity allows viewers to explore how UFO sightings vary across different decades and to observe changes in reporting patterns over time. It also helps reduce overplotting by letting the user focus on a specific temporal window, making spatial patterns easier to see.
+
 </p>
-<iframe src="assets/ufo_plot2.html" width="700" height="450" style="border:none;"></iframe>
+<iframe 
+  src="https://sylviazhou12138.github.io/assets/ufo_plot2.html"
+  width="700"
+  height="450"
+  style="border:none;">
+</iframe>
+
+<p>For the second plot, I implemented an interactive year slider using an Altair parameter bound to a range input. This enables dynamic filtering of data points based on the selected year. The interactivity improves readability by avoiding clutter, and it allows viewers to explore temporal and spatial relationships in the dataset more effectively.</p>
 
 <p>
   <a href="https://github.com/SylviaZhou12138/is445_hw5/raw/main/ufo-scrubbed-geocoded-time-standardized-00.csv" target="_blank">The Data</a> |
   <a href="https://github.com/SylviaZhou12138/is445_hw5/blob/main/hw5.ipynb" target="_blank">The Analysis</a>
 </p>
+
